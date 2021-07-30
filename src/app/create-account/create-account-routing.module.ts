@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateAccountComponent } from './create-account.component';
 
 
-const routes: Routes = [{ path: 'create-account', component: CreateAccountComponent }];
+const routes: Routes = [{ path: '', component: CreateAccountComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

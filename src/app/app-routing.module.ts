@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'create-account', redirectTo: 'create-account', pathMatch: 'full' },
+  { path: '', redirectTo: 'create-account', pathMatch: 'full' },
   {
     path: 'create-account',
     loadChildren: () =>
