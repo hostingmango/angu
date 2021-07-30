@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: "create-account", redirectTo: "create-account", pathMatch: "full" },
+  { path: 'create-account', redirectTo: 'create-account', pathMatch: 'full' },
   {
-    path: "create-account",
+    path: 'create-account',
     loadChildren: () =>
       import('./create-account/create-account.module').then((m) => m.CreateAccountModule),
   },
