@@ -1,1 +1,249 @@
 /* You can add global styles to this file, and also import other style files */
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #444444;
+  background-color: #F4F4F4;
+}
+
+a {
+  color: #106eea;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3b8af2;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: #404040;
+  font-size: 18px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #404040;
+  font-size: 18px;
+}
+
+::placeholder {
+  color: #404040;
+  font-size: 18px;
+}
+
+button:focus-visible {
+  outline: none;
+}
+
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #2BB673;
+  border-top-color: #e2eefd;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #106eea;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #3284f1;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Sign In Form Page
+--------------------------------------------------------------*/
+.sign-in-form {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-form {
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  padding: 50px;
+}
+
+.sign-form h4 {
+  color: #2BB673;
+  font-size: 34px;
+}
+
+.form-group .form-control  {
+  border: none;
+  background-color: #F4F4F4;
+  border-bottom: 2px solid #ffffff00;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.form-group input:focus, .form-group input:hover {
+  box-shadow: unset;
+  background-color: transparent;
+  border-bottom: 2px solid #2BB673;
+  border-radius: 0;
+}
+
+.sign-form p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #404040;
+}
+
+.form-group button:disabled, .form-group button[disabled] {
+  background-color: #BFBFBF;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 80px;
+  border: none;
+  border-radius: 30px;
+}
+
+.form-group button {
+  background-color: #2BB673;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 80px;
+  border: none;
+  border-radius: 30px;
+}
+
+.form-group.sign-up-text p a {
+  color: #2BB673;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+# Create Account Form Page
+--------------------------------------------------------------*/
+.create-account-form {
+  margin: 30px 0;
+}
+
+
+/*--------------------------------------------------------------
+# Verify Email Page
+--------------------------------------------------------------*/
+.didnt-get a {
+  color: #404040;
+}
+
+
+/*--------------------------------------------------------------
+# Responsive CSS
+--------------------------------------------------------------*/
+
+@media (max-width: 992px) {
+
+  .sign-in-form {
+    height: 100vh;
+  }
+
+  .create-account-form {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .sign-in-form {
+    height: auto;
+    margin: 30px 0;
+  }
+
+  .sign-form {
+    padding: 30px;
+  }
+
+  .sign-form h4 {
+    font-size: 25px;
+  }
+
+  .form-group button {
+    padding: 10px 60px;
+  }
+
+}
