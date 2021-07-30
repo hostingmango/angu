@@ -1,10 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CreateAccountService } from '../services/create-account.service';
 import { HttpService } from '../services/http.service';
 import { User } from '../user';
-
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -17,7 +17,7 @@ export class CreateAccountComponent implements OnInit {
   message: any;
 
 
-  constructor(private httpService: HttpService, private services: CreateAccountService, private fb: FormBuilder, private router: Router) { }
+  constructor(private httpService: HttpService, private services: CreateAccountService, private fb: FormBuilder, private router: Router, private httpC: HttpClient) { }
 
   ngOnInit(): void {
       this.createAccountForm = this.fb.group({
@@ -51,7 +51,11 @@ export class CreateAccountComponent implements OnInit {
         userData,
         '/api/Accounts/InsertUpdateAccounts'
       );
-      console.log(registerData, 'kkk');
+
+      const nav = 
+
+      this.router.navigate([`thank-you/:${userData.email}`]);
+
     } catch (error) {
       console.log(error);
     }
