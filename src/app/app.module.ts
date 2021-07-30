@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignInModule } from './sign-in/sign-in.module';
 import { CreateAccountModule } from './create-account/create-account.module';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ThankYouComponent
   ],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    CreateAccountModule,
-    SignInModule
+    HttpClientModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

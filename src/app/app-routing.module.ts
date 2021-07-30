@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 
 const routes: Routes = [
-  { path: 'create-account', redirectTo: 'create-account', pathMatch: 'full' },
+  { path: '', redirectTo: 'create-account', pathMatch: 'full' },
   {
     path: 'create-account',
     loadChildren: () =>
@@ -14,6 +15,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./sign-in/sign-in.module').then((m) => m.SignInModule),
   },
+  {
+    path: 'thank-you/:email',
+    component: ThankYouComponent
+  }
 ];
 
 @NgModule({
