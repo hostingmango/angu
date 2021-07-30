@@ -17,25 +17,26 @@ export class CreateAccountComponent implements OnInit {
   message: any;
 
 
-  constructor(private httpService: HttpService, private services: CreateAccountService, private fb: FormBuilder, private router: Router, private httpC: HttpClient) { }
+  constructor(private httpService: HttpService, private fb: FormBuilder, private router: Router, private httpC: HttpClient) { }
 
   ngOnInit(): void {
-      this.createAccountForm = this.fb.group({
-        firstName: ['', [
-          Validators.required
-        ]],
-        lastName: ['', [
-          Validators.required
-        ]],
-        email: ['', [
-        ]],
-        password: ['', [
-          Validators.required
-        ]],
-        reTypePassword: ['', [
-          Validators.required
-        ]],
-      });
+    this.createAccountForm = this.fb.group({
+      firstName: ['', [
+        Validators.required
+      ]],
+      lastName: ['', [
+        Validators.required
+      ]],
+      email: ['', [
+        Validators.required
+      ]],
+      password: ['', [
+        Validators.required
+      ]],
+      reTypePassword: ['', [
+        Validators.required
+      ]],
+    });
   }
   // registerNow(userData) {
   //   let response = this.services.doRegistration(userData);
@@ -51,8 +52,6 @@ export class CreateAccountComponent implements OnInit {
         userData,
         '/api/Accounts/InsertUpdateAccounts'
       );
-
-      const nav = 
 
       this.router.navigate([`thank-you/:${userData.email}`]);
 
