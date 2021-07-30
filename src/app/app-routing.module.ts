@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./sign-in/sign-in.module').then((m) => m.SignInModule),
   },
+  {
+    path: 'thank-you/:email',
+    component: ThankYouComponent
+  }
 ];
 
 @NgModule({
