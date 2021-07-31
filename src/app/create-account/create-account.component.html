@@ -19,6 +19,16 @@
                             <div class="form-group mb-3">
                                 <input type="text" name="email" formControlName="email" class="form-control" id="email"
                                     placeholder="Email" required="">
+
+                                <!-- <p *ngIf="createAccountForm.controls.email.errors?.required">
+                                        Email is required
+                                    </p> -->
+
+                                <p class="error-text" *ngIf="createAccountForm.controls.email.errors?.pattern">
+                                    Please enter a valid email.
+                                </p>
+
+
                             </div>
                             <div class="form-group mb-4">
                                 <input type="password" name="password" formControlName="password" class="form-control"
@@ -27,7 +37,16 @@
                             <div class="form-group mb-4">
                                 <input type="password" name="reTypePassword" formControlName="reTypePassword"
                                     class="form-control" id="retypepassword" placeholder="Password Again" required="">
+
+                                    <div *ngIf="createAccountForm.controls.reTypePassword.value != ''">
+                                        <p class="error-text"
+                                        *ngIf="createAccountForm.controls.password.value != createAccountForm.controls.reTypePassword.value ">
+                                        Confirm Password is not equal.
+                                    </p>
+                                    </div>
+                                
                             </div>
+
                             <div class="form-group mb-4">
                                 <button type="submit" [disabled]="!createAccountForm.valid">Sign Up</button>
                             </div>

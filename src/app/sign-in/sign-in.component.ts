@@ -18,11 +18,11 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: ['', [
-        Validators.required
-      ]],
+      email: ['',
+        [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)],
+      ],
       password: ['', [
-        Validators.required
+        Validators.required,
       ]],
     });
   }
@@ -35,8 +35,7 @@ export class SignInComponent implements OnInit {
         userData,
         '/api/Accounts/GetUserLoginList'
       );
-      const nav =
-        this.router.navigate([`thank-you/:${userData.email}`]);
+      this.router.navigate([`thank-you/:${userData.email}`]);
     } catch (error) {
       console.log(error);
     }
