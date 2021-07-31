@@ -41,7 +41,6 @@ export class HttpService {
         case "put":
           this.http.post(url, body, { headers: headers })
             .subscribe(callData => {
-              console.log(callData);
               resolve(callData);
             }, error => {
               console.log(JSON.stringify(error));

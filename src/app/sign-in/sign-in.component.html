@@ -6,20 +6,20 @@
                 <div class="col-lg-5 col-md-8">
                     <div class="sign-form">
                         <h4 class="mb-5">Sign in to Prophot</h4>
-                        <form id="form-signin">
+                        <form id="form-signin" [formGroup]="logInForm" (ngSubmit)="logInNow(logInForm.value)">
                             <div class="form-group mb-3">
-                                <input type="text" name="email" class="form-control" id="email" placeholder="Email"
-                                    required="">
+                                <input type="text" name="email" type="email" class="form-control"
+                                    formControlName="email" id="email" placeholder="Email" required="">
                             </div>
                             <div class="form-group mb-4">
-                                <input type="password" name="password" class="form-control" id="password"
-                                    placeholder="Password" required="">
+                                <input type="password" name="password" formControlName="password" class="form-control"
+                                    id="password" placeholder="Password" required="">
                             </div>
                             <div class="form-group mb-5">
                                 <p>Forgot your password?</p>
                             </div>
                             <div class="form-group mb-4">
-                                <button type="submit" disabled="disabled">Sign in</button>
+                                <button type="submit" [disabled]="!logInForm.valid">Sign in</button>
                             </div>
                             <div class="form-group sign-up-text">
                                 <p><a routerLink="/create-account">Don’t have an account? Sign up.</a></p>
